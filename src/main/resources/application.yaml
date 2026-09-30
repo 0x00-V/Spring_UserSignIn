@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: UserSignIn
+
+  datasource:
+    url: "jdbc:postgresql://127.0.0.1/testing"
+    username: "postgres"
+    password: "mypassword"
+    hikari:
+      maximum-pool-size: 30
