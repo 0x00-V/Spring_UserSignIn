@@ -7,18 +7,20 @@ import jakarta.persistence.*;
 @Entity
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @SequenceGenerator(name = "users_seq", sequenceName = "users_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
+    @Column(name="id", updatable = false)
     private Long id;
 
-    @Column(nullable=false)
+    @Column(name="name", nullable=false)
     private String name;
 
-    @Column(nullable=false)
+    @Column(name="email", unique=true ,nullable=false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name="password", nullable = false)
     private String password;
-
 
     protected User(){}
     public User(Long id, String name, String email, String password)
@@ -36,6 +38,7 @@ public class User {
 
     public void setName(String name) { this.name = name;}
     public void setEmail(String email) { this.email = email; }
+    public void setPassword(String password) { this.password = password; }
 }
 
 

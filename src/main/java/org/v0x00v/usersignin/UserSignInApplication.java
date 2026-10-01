@@ -16,16 +16,20 @@ public class UserSignInApplication {
 
     }
 
-    /*@Bean
+    @Bean
     CommandLineRunner runner(UserRepository repository)
     {
         return args -> {
             User user = new User();
             user.setName("Daniel");
-            user.setEmail("danithom2003@outlook.com");
+            user.setEmail("business.danielthomas@outlook.com");
+            user.setPassword("1234");
             repository.save(user);
             User saved = repository.findById(user.getId()).orElseThrow(NoSuchElementException::new);
+            User myuser = repository.findByEmail("business.danielthomas@outlook.com");
+            System.out.println("ID: " + myuser.getId() + ", Name: " + myuser.getEmail() + ", Password: " + myuser.getPassword());
         };
-    }*/
+    }
+
 
 }
