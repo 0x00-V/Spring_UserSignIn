@@ -1,4 +1,4 @@
-package org.v0x00v.usersignin;
+package org.v0x00v.usersignin.Models;
 
 import jakarta.persistence.*;
 
