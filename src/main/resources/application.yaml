@@ -1,13 +1,25 @@
 spring:
   application:
     name: UserSignIn
+<<<<<<< HEAD
+=======
+  jpa:
+    hibernate.ddl-auto: "create-drop"
+>>>>>>> ce7aeeb (Setting up security)
   datasource:
     url: "jdbc:postgresql://127.0.0.1:5432/testing"
     username: "postgres"
     password: "mypassword"
     hikari:
       maximum-pool-size: 30
+<<<<<<< HEAD
   jpa:
     hibernate:
       ddl-auto: create-drop
 
+=======
+
+  session:
+    jdbc:
+      table-name: "SESSIONS"
+>>>>>>> ce7aeeb (Setting up security)
