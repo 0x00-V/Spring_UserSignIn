@@ -1,6 +1,7 @@
 package org.v0x00v.usersignin;
 
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,9 +11,9 @@ import java.security.Principal;
 public class HomeController {
 
     @GetMapping("/")
-    public String home(Principal principal)
+    public String home()
     {
-        return "Hello, " + principal.getName();
+        return "Hello";
     }
 
 }

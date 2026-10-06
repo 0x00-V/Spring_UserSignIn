@@ -3,8 +3,8 @@ package org.v0x00v.usersignin.Models;
 import jakarta.persistence.*;
 
 
-@Table(name = "Users")
-@Entity
+@Table
+@Entity(name = "Users")
 public class User {
 
     @Id
@@ -22,7 +22,7 @@ public class User {
     @Column(name="password", nullable = false)
     private String password;
 
-    protected User(){}
+    public User(){}
     public User(Long id, String name, String email, String password)
     {
         this.id = id;
