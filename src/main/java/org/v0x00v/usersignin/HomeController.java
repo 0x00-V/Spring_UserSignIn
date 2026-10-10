@@ -16,4 +16,7 @@ public class HomeController {
         return "Hello";
     }
 
+    @GetMapping("/secured")
+    public String secured(){ return "Secured Endpoint."; }
+
 }

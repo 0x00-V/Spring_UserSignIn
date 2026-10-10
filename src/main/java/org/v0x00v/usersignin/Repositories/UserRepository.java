@@ -6,5 +6,5 @@ import org.v0x00v.usersignin.Models.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByEmail(String email);
+    User findByUsername(String username);
 }

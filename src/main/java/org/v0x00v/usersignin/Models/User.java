@@ -13,8 +13,8 @@ public class User {
     @Column(name="id", updatable = false)
     private Long id;
 
-    @Column(name="name", nullable=false)
-    private String name;
+    @Column(name="username", nullable=false)
+    private String username;
 
     @Column(name="email", unique=true ,nullable=false)
     private String email;
@@ -26,17 +26,17 @@ public class User {
     public User(Long id, String name, String email, String password)
     {
         this.id = id;
-        this.name = name;
+        this.username = username;
         this.email = email;
         this.password = password;
     }
 
     public Long getId() { return this.id; }
-    public String getName() { return this.name; }
+    public String getUsername() { return this.username; }
     public String getEmail() { return this.email; }
     public String getPassword() { return this.password; }
 
-    public void setName(String name) { this.name = name;}
+    public void setUsername(String username) { this.username = username;}
     public void setEmail(String email) { this.email = email; }
     public void setPassword(String password) { this.password = password; }
 }

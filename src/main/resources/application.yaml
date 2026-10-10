@@ -14,4 +14,3 @@ spring:
   session:
     jdbc:
       table-name: "SESSIONS"
-

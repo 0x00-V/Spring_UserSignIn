@@ -29,7 +29,7 @@ public class UserSignInApplication {
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
             User user = new User();
-            user.setName("User1");
+            user.setUsername("User1");
             user.setEmail("business.danielthomas@outlook.com");
             user.setPassword(encoder.encode("1234"));
 
