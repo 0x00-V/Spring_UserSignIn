@@ -2,7 +2,15 @@ package org.v0x00v.usersignin;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolderStrategy;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.web.bind.annotation.*;
 import org.v0x00v.usersignin.Models.*;
 import org.v0x00v.usersignin.Repositories.UserRepository;
@@ -14,6 +22,7 @@ import java.util.NoSuchElementException;
 public class UsersController {
     private final UserRepository repository;
     private final UserService userService;
+
     public UsersController(UserRepository repository, UserService userService)
     {
         this.repository = repository;
@@ -35,8 +44,10 @@ public class UsersController {
         {
             return signInForm.getUsername()+" not found.";
         }
+
         return "Entered Details: " + signInForm.getUsername() +" "+ signInForm.getPassword() + "\nPassword Match Real User: " + encoder.matches(signInForm.getPassword(), user.getPassword());
     }
+
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody User user)
